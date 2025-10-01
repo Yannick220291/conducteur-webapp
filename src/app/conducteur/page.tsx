@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import './conducteur.css';
+import Courses from './Courses'; // Utilisé dans le JSX
 
 export default function ConducteurPage() {
   const [position, setPosition] = useState<{ latitude: number | null; longitude: number | null }>({
@@ -28,9 +29,9 @@ export default function ConducteurPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ latitude, longitude, busId: 1 }),
       })
-        .then((res) => res.json())
-        .then((data) => setMessage(data.message || 'Position envoyée'))
-        .catch((err) => setMessage('Erreur : ' + err.message));
+        .then(res => res.json())
+        .then((data: { message?: string }) => setMessage(data.message || 'Position envoyée'))
+        .catch((err: Error) => setMessage('Erreur : ' + err.message));
     };
 
     if (!navigator.geolocation) {
@@ -45,7 +46,7 @@ export default function ConducteurPage() {
     sendPosition();
     const interval = setInterval(sendPosition, 10000);
     return () => clearInterval(interval);
-  }, []); // plus de warning, tout est défini dans useEffect
+  }, []);
 
   return (
     <div className="conducteur-container">
@@ -53,6 +54,8 @@ export default function ConducteurPage() {
       <p>Latitude : {position.latitude ?? 'En attente'}</p>
       <p>Longitude : {position.longitude ?? 'En attente'}</p>
       <p>Status : {message}</p>
+
+      <Courses /> {/* Affiche les courses disponibles */}
     </div>
   );
 }
