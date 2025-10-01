@@ -22,12 +22,20 @@ export default function LoginPage() {
 
   return (
     <div className="login-container">
+      {/* Introduction */}
+      <h2 className="intro-text">Bienvenue sur Web application Application</h2>
+
+      {/* Logo et nom */}
       <div className="login-top">
         <div className="logo-name">
-          <Image src="/images/logo.png" alt="Bus Tracking" width={80} height={80} />
+          <div className="logo-circle">
+            <Image src="/images/logo.png" alt="Bus Tracking" width={100} height={100} />
+          </div>
           <h1>Bus Tracking</h1>
         </div>
       </div>
+
+      {/* Formulaire */}
       <form className="login-form" onSubmit={handleSubmit}>
         <input
           type="email"
@@ -47,6 +55,7 @@ export default function LoginPage() {
           required
         />
         <button type="submit">Se connecter</button>
+        <a href="#" className="forgot-password">Mot de passe oublié ?</a>
       </form>
     </div>
   );
