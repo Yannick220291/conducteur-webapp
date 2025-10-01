@@ -49,38 +49,6 @@ npm run dev
 ```
 Cela lancera l'application en mode développement. Vous pouvez accéder à l'application à l'adresse `http://localhost:3000`.
 
-## Structure du projet
-
-Voici un aperçu de la structure du projet :
-
-```
-conducteur-webapp/
-├── public/                # Contient les fichiers statiques accessibles au public
-│   ├── file.svg
-│   ├── globe.svg
-│   ├── next.svg
-│   ├── vercel.svg
-│   └── window.svg
-├── src/                   # Contient le code source de l'application
-│   └── app/               # Dossier principal de l'application
-│       ├── conducteur/     # Composant spécifique pour la gestion des conducteurs
-│       │   ├── conducteur.css  # Styles spécifiques au composant conducteur
-│       │   └── page.tsx       # Page principale du composant conducteur
-│       ├── favicon.ico      # Icône de l'application
-│       ├── globals.css      # Styles globaux
-│       ├── layout.tsx       # Mise en page générale de l'application
-│       ├── page.module.css   # Styles pour la page principale
-│       └── page.tsx         # Page principale de l'application
-├── .gitignore              # Fichiers à ignorer par Git
-├── eslint.config.mjs       # Configuration ESLint
-├── next.config.ts          # Configuration de Next.js
-├── package-lock.json       # Fichier de verrouillage des dépendances
-├── package.json            # Dépendances et scripts du projet
-├── README.md               # Documentation du projet
-├── server.js               # Serveur pour l'application
-└── tsconfig.json           # Configuration TypeScript
-```
-
 ### Explication des fichiers principaux
 - **public/** : Contient les ressources statiques comme les images et les icônes.
 - **src/app/** : Contient le code source de l'application, y compris les composants et les styles.
