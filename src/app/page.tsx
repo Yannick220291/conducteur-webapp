@@ -1,7 +1,7 @@
 'use client';
 
-import './page.css'; // ← ça importe le CSS dans la page
-import Image from 'next/image'; // pour remplacer <img>
+import './page.css';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function LoginPage() {
@@ -23,8 +23,10 @@ export default function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-top">
-        <Image src="/logo.png" alt="Bus Tracking" width={80} height={80} />
-        <h1>Bus Tracking</h1>
+        <div className="logo-name">
+          <Image src="/images/logo.png" alt="Bus Tracking" width={80} height={80} />
+          <h1>Bus Tracking</h1>
+        </div>
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <input
