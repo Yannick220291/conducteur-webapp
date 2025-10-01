@@ -1,5 +1,7 @@
 'use client';
 
+import './page.css'; // ← ça importe le CSS dans la page
+import Image from 'next/image'; // pour remplacer <img>
 import { useState } from 'react';
 
 export default function LoginPage() {
@@ -8,7 +10,6 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Pour l'instant, juste un alert pour tester le frontend
     alert(`Email: ${email}\nMot de passe: ${password}`);
   };
 
@@ -22,7 +23,7 @@ export default function LoginPage() {
   return (
     <div className="login-container">
       <div className="login-top">
-        <img src="/logo.png" alt="Bus Tracking" className="logo" />
+        <Image src="/logo.png" alt="Bus Tracking" width={80} height={80} />
         <h1>Bus Tracking</h1>
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
@@ -48,4 +49,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
